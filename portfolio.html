@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio – EmberLeaf Laserworks</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="logo.svg" alt="EmberLeaf Logo">
+    </a>
+
+    <nav class="desktop-links">
+      <a href="/">Home</a>
+      <a href="/portfolio.html">Portfolio</a>
+    </nav>
+
+    <button class="mobile-toggle" id="mobileToggle">Menu</button>
+  </div>
+
+  <div id="mobileMenu" class="mobile-links">
+    <a href="/">Home</a>
+    <a href="/portfolio.html">Portfolio</a>
+  </div>
+</header>
+
+<section class="section portfolio-hero parallax-bg">
+  <div class="hero-spotlight"></div>
+
+  <div class="container">
+    <h1 class="animate-title">
+      Our Work  
+      <span class="gold-text">Engineered With Precision</span>
+    </h1>
+    <p class="portfolio-sub animate-fade">
+      Explore projects across wood, metal, acrylic, tumblers, engraving kits, and brand merchandise.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- FILTERS -->
+    <div class="portfolio-filters animate-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="wood">Wood</button>
+      <button class="filter-btn" data-filter="tumbler">Tumblers</button>
+      <button class="filter-btn" data-filter="acrylic">Acrylic</button>
+      <button class="filter-btn" data-filter="metal">Metal</button>
+      <button class="filter-btn" data-filter="brand">Brand Merch</button>
+    </div>
+
+    <!-- MASONRY GRID -->
+    <div class="portfolio-grid masonry">
+
+      <!-- PORTFOLIO ITEM -->
+      <div class="portfolio-item animate-up" data-category="wood">
+        <img src="gallery/wood-engrave-01.jpg">
+        <div class="overlay">
+          <h3>Wood Engraving</h3>
+          <p>Custom gift engraving</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item animate-up" data-category="tumbler">
+        <img src="gallery/tumbler-01.jpg">
+        <div class="overlay">
+          <h3>Custom Tumbler</h3>
+          <p>Coach gift series</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item animate-up" data-category="acrylic">
+        <img src="gallery/acrylic-01.jpg">
+        <div class="overlay">
+          <h3>Acrylic Engraving</h3>
+          <p>Edge-lit signage</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item animate-up" data-category="brand">
+        <img src="gallery/board-01.jpg">
+        <div class="overlay">
+          <h3>Brand Board</h3>
+          <p>Small batch for local shop</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item animate-up" data-category="metal">
+        <img src="gallery/metal-01.jpg">
+        <div class="overlay">
+          <h3>Metal Engraving</h3>
+          <p>Anodized precision</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item animate-up" data-category="brand">
+        <img src="gallery/bulk-01.jpg">
+        <div class="overlay">
+          <h3>Bulk Merch</h3>
+          <p>Short-run production</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX VIEWER -->
+<div id="lightbox" class="lightbox">
+  <img id="lightbox-img" src="">
+</div>
+
+<footer class="footer">
+  © <span id="year"></span> EmberLeaf Laserworks. Built with precision.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>EmberLeaf Laserworks</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="logo1.svg" alt="EmberLeaf Logo">
+    </a>
+
+    <nav class="desktop-links">
+      <a href="/">Home</a>
+      <a href="/portfolio.html">Portfolio</a>
+    </nav>
+
+    <button class="mobile-toggle" id="mobileToggle">Menu</button>
+  </div>
+
+  <div id="mobileMenu" class="mobile-links">
+    <a href="/">Home</a>
+    <a href="/portfolio.html">Portfolio</a>
+  </div>
+</header>
+
+<section class="hero section">
+  <div class="hero-spotlight"></div>
+
+  <div class="container">
+    <h1 class="animate-title">
+      Precision Laser Engraving<br>
+      <span class="gold-text">For Modern Creators</span>
+    </h1>
+    <p class="hero-sub animate-fade">
+      EmberLeaf Laserworks blends precision engineering with creative craftsmanship to deliver premium custom engraving for gifts, teams, and brands.
+    </p>
+
+    <a href="#quote" class="btn-primary animate-fade">Start Your Project</a>
+  </div>
+</section>
+
+<section class="section services">
+  <div class="container">
+    <h2 class="section-title animate-up">What We Create</h2>
+
+    <div class="grid-3">
+      <div class="card animate-up">
+        <h3>Team & Coach Gifts</h3>
+        <p>Custom tumblers, plaques, and engraved awards built to impress.</p>
+      </div>
+
+      <div class="card animate-up">
+        <h3>Small-Batch Brand Merch</h3>
+        <p>Short-run, high-quality custom engraving for creators and businesses.</p>
+      </div>
+
+      <div class="card animate-up">
+        <h3>Premium Personal Gifts</h3>
+        <p>Unique, meaningful gifts with precision-engraved details.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quote" class="section contact">
+  <div class="container">
+    <h2 class="section-title animate-up">Start a Custom Project</h2>
+    <p class="contact-sub animate-fade">
+      Describe your idea and we’ll send options and accurate pricing.
+    </p>
+
+    <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form animate-up">
+      <input type="hidden" name="form-name" value="quote">
+      <p style="display:none"><input name="bot-field"></p>
+
+      <input name="name" placeholder="Your name" required>
+      <input name="email" type="email" placeholder="Your email" required>
+      <input name="project_type" placeholder="What are you engraving?">
+      <textarea name="project_details" rows="4" placeholder="Quantities, materials, idea…"></textarea>
+
+      <button class="btn-primary" type="submit">Send Request</button>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  © <span id="year"></span> EmberLeaf Laserworks. Built with precision.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

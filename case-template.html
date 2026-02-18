@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case Study – EmberLeaf Laserworks</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo"><img src="logo.svg"></a>
+    <nav class="desktop-links">
+      <a href="/">Home</a>
+      <a href="/portfolio.html">Portfolio</a>
+    </nav>
+    <button class="mobile-toggle" id="mobileToggle">Menu</button>
+  </div>
+  <div id="mobileMenu" class="mobile-links">
+    <a href="/">Home</a>
+    <a href="/portfolio.html">Portfolio</a>
+  </div>
+</header>
+
+<section class="section parallax-bg" style="padding-top:160px;padding-bottom:160px;">
+  <div class="hero-spotlight"></div>
+
+  <div class="container">
+    <h1 class="animate-title">Project Title<br><span class="gold-text">Case Study</span></h1>
+    <p class="hero-sub animate-fade">
+      A deep dive into our engraving process, materials, challenges, and craftsmanship.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="case-meta animate-up">
+      <div>
+        <h3>Client</h3>
+        <p>Client or project name</p>
+      </div>
+      <div>
+        <h3>Category</h3>
+        <p>Wood / Metal / Tumbler / Acrylic / Brand Merch</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <p>Laser engraving, vector prep, material finishing</p>
+      </div>
+    </div>
+
+    <div class="case-body animate-up">
+      <h2>The Project</h2>
+      <p>
+        Describe the goal, inspiration, and problem to solve.  
+        This section gives context for the design and engraving work.
+      </p>
+
+      <h2>Process</h2>
+      <p>
+        Break down your steps: vector prep, material selection, test passes, proof tile,
+        engraving method, cleanup, finishing, packing.
+      </p>
+
+      <div class="case-img"><img src="gallery/wood-engrave-01.jpg"></div>
+
+      <h2>Result</h2>
+      <p>
+        Showcase the final engraving. Explain how your solution delivered value to the
+        client or recipient.
+      </p>
+
+      <div class="case-img"><img src="gallery/tumbler-01.jpg"></div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">© <span id="year"></span> EmberLeaf Laserworks.</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+/* CASE STUDY LAYOUT */
+.case-meta{
+  display:grid;
+  gap:40px;
+  grid-template-columns:1fr;
+  margin-bottom:60px;
+}
+.case-meta h3{
+  color:var(--gold);
+  margin-bottom:6px;
+}
+@media(min-width:900px){
+  .case-meta{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+.case-body h2{
+  font-size:2rem;
+  margin:40px 0 10px;
+}
+.case-img{
+  margin:30px 0;
+}
+.case-img img{
+  width:100%;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.1);
+}
