@@ -3,10 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfolio – EmberLeaf Laserworks</title>
-
+<title>Portfolio | EmberLeaf Laserworks</title>
+<meta name="description" content="Browse EmberLeaf Laserworks projects in wood, acrylic, tumblers, and branded engravings." />
+<link rel="canonical" href="https://www.emberleaflaserworks.com/portfolio.html" />
+<meta property="og:title" content="Portfolio | EmberLeaf Laserworks" />
+<meta property="og:description" content="Explore precision engraving projects from EmberLeaf Laserworks." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.emberleaflaserworks.com/portfolio.html" />
+<meta property="og:image" content="https://www.emberleaflaserworks.com/og-cover.jpg" />
+<link rel="icon" type="image/png" href="favicon.png" />
 <link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -16,21 +23,23 @@
 <header class="nav">
   <div class="nav-inner">
     <a href="/" class="logo">
-      <img src="logo.svg" alt="EmberLeaf Logo">
+      <img src="logo.svg" alt="EmberLeaf Laserworks logo">
     </a>
 
-    <nav class="desktop-links">
+    <nav class="desktop-links" aria-label="Primary navigation">
       <a href="/">Home</a>
       <a href="/portfolio.html">Portfolio</a>
+      <a href="/about.html">About</a>
     </nav>
 
-    <button class="mobile-toggle" id="mobileToggle">Menu</button>
+    <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
   </div>
 
-  <div id="mobileMenu" class="mobile-links">
+  <nav id="mobileMenu" class="mobile-links" aria-label="Mobile navigation">
     <a href="/">Home</a>
     <a href="/portfolio.html">Portfolio</a>
-  </div>
+    <a href="/about.html">About</a>
+  </nav>
 </header>
 
 <section class="section portfolio-hero parallax-bg">
@@ -38,7 +47,7 @@
 
   <div class="container">
     <h1 class="animate-title">
-      Our Work  
+      Our Work
       <span class="gold-text">Engineered With Precision</span>
     </h1>
     <p class="portfolio-sub animate-fade">
@@ -50,7 +59,6 @@
 <section class="section">
   <div class="container">
 
-    <!-- FILTERS -->
     <div class="portfolio-filters animate-up">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="wood">Wood</button>
@@ -60,12 +68,9 @@
       <button class="filter-btn" data-filter="brand">Brand Merch</button>
     </div>
 
-    <!-- MASONRY GRID -->
     <div class="portfolio-grid masonry">
-
-      <!-- PORTFOLIO ITEM -->
       <div class="portfolio-item animate-up" data-category="wood">
-        <img src="gallery/wood-engrave-01.jpg">
+        <img src="og-cover.jpg" alt="Wood engraving sample">
         <div class="overlay">
           <h3>Wood Engraving</h3>
           <p>Custom gift engraving</p>
@@ -73,7 +78,7 @@
       </div>
 
       <div class="portfolio-item animate-up" data-category="tumbler">
-        <img src="gallery/tumbler-01.jpg">
+        <img src="og-cover.jpg" alt="Custom engraved tumbler sample">
         <div class="overlay">
           <h3>Custom Tumbler</h3>
           <p>Coach gift series</p>
@@ -81,7 +86,7 @@
       </div>
 
       <div class="portfolio-item animate-up" data-category="acrylic">
-        <img src="gallery/acrylic-01.jpg">
+        <img src="og-cover.jpg" alt="Acrylic engraving sample">
         <div class="overlay">
           <h3>Acrylic Engraving</h3>
           <p>Edge-lit signage</p>
@@ -89,7 +94,7 @@
       </div>
 
       <div class="portfolio-item animate-up" data-category="brand">
-        <img src="gallery/board-01.jpg">
+        <img src="og-cover.jpg" alt="Branded board engraving sample">
         <div class="overlay">
           <h3>Brand Board</h3>
           <p>Small batch for local shop</p>
@@ -97,7 +102,7 @@
       </div>
 
       <div class="portfolio-item animate-up" data-category="metal">
-        <img src="gallery/metal-01.jpg">
+        <img src="og-cover.jpg" alt="Precision metal engraving sample">
         <div class="overlay">
           <h3>Metal Engraving</h3>
           <p>Anodized precision</p>
@@ -105,20 +110,18 @@
       </div>
 
       <div class="portfolio-item animate-up" data-category="brand">
-        <img src="gallery/bulk-01.jpg">
+        <img src="og-cover.jpg" alt="Bulk branded merch engraving sample">
         <div class="overlay">
           <h3>Bulk Merch</h3>
           <p>Short-run production</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- LIGHTBOX VIEWER -->
-<div id="lightbox" class="lightbox">
-  <img id="lightbox-img" src="">
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <img id="lightbox-img" src="" alt="Expanded portfolio image">
 </div>
 
 <footer class="footer">
