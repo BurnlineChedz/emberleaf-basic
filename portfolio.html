@@ -111,5 +111,133 @@
   </footer>
 
   <script src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio | EmberLeaf Laserworks</title>
+<meta name="description" content="Browse EmberLeaf Laserworks projects in wood, acrylic, tumblers, and branded engravings." />
+<link rel="canonical" href="https://www.emberleaflaserworks.com/portfolio.html" />
+<meta property="og:title" content="Portfolio | EmberLeaf Laserworks" />
+<meta property="og:description" content="Explore precision engraving projects from EmberLeaf Laserworks." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.emberleaflaserworks.com/portfolio.html" />
+<meta property="og:image" content="https://www.emberleaflaserworks.com/og-cover.jpg" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="logo.svg" alt="EmberLeaf Laserworks logo">
+    </a>
+
+    <nav class="desktop-links" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/portfolio.html">Portfolio</a>
+      <a href="/about.html">About</a>
+    </nav>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+  </div>
+
+  <nav id="mobileMenu" class="mobile-links" aria-label="Mobile navigation">
+    <a href="/">Home</a>
+    <a href="/portfolio.html">Portfolio</a>
+    <a href="/about.html">About</a>
+  </nav>
+</header>
+
+<section class="section portfolio-hero parallax-bg">
+  <div class="hero-spotlight"></div>
+
+  <div class="container">
+    <h1 class="animate-title">
+      Our Work
+      <span class="gold-text">Engineered With Precision</span>
+    </h1>
+    <p class="portfolio-sub animate-fade">
+      Explore projects across wood, metal, acrylic, tumblers, engraving kits, and brand merchandise.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="portfolio-filters animate-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="wood">Wood</button>
+      <button class="filter-btn" data-filter="tumbler">Tumblers</button>
+      <button class="filter-btn" data-filter="acrylic">Acrylic</button>
+      <button class="filter-btn" data-filter="metal">Metal</button>
+      <button class="filter-btn" data-filter="brand">Brand Merch</button>
+    </div>
+
+    <div class="portfolio-grid masonry">
+      <div class="portfolio-item animate-up" data-category="wood">
+        <img src="og-cover.jpg" alt="Wood engraving sample">
+        <div class="overlay">
+          <h3>Wood Engraving</h3>
+          <p>Custom gift engraving</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item animate-up" data-category="tumbler">
+        <img src="og-cover.jpg" alt="Custom engraved tumbler sample">
+        <div class="overlay">
+          <h3>Custom Tumbler</h3>
+          <p>Coach gift series</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item animate-up" data-category="acrylic">
+        <img src="og-cover.jpg" alt="Acrylic engraving sample">
+        <div class="overlay">
+          <h3>Acrylic Engraving</h3>
+          <p>Edge-lit signage</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item animate-up" data-category="brand">
+        <img src="og-cover.jpg" alt="Branded board engraving sample">
+        <div class="overlay">
+          <h3>Brand Board</h3>
+          <p>Small batch for local shop</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item animate-up" data-category="metal">
+        <img src="og-cover.jpg" alt="Precision metal engraving sample">
+        <div class="overlay">
+          <h3>Metal Engraving</h3>
+          <p>Anodized precision</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item animate-up" data-category="brand">
+        <img src="og-cover.jpg" alt="Bulk branded merch engraving sample">
+        <div class="overlay">
+          <h3>Bulk Merch</h3>
+          <p>Short-run production</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="lightbox" class="lightbox" aria-hidden="true">
+  <img id="lightbox-img" src="" alt="Expanded portfolio image">
+</div>
+
+<footer class="footer">
+  © <span id="year"></span> EmberLeaf Laserworks. Built with precision.
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
