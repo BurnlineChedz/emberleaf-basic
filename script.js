@@ -1,53 +1,73 @@
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
 const mobileToggle = document.getElementById("mobileToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 
-mobileToggle.addEventListener("click", () => {
-  mobileMenu.style.display = mobileMenu.style.display === "block" ? "none" : "block";
-});
+if (mobileToggle && mobileMenu) {
+  mobileToggle.setAttribute("aria-expanded", "false");
+
+  mobileToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("is-open");
+    mobileToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+}
 
 // Scroll reveal
 const reveals = document.querySelectorAll(".animate-up");
-window.addEventListener("scroll", () => {
-  const trigger = window.innerHeight * 0.85;
+if (reveals.length) {
+  const revealOnScroll = () => {
+    const trigger = window.innerHeight * 0.85;
 
-  reveals.forEach(el => {
-    const rect = el.getBoundingClientRect().top;
-    if (rect < trigger) el.classList.add("visible");
-  });
-});
+    reveals.forEach(el => {
+      const rect = el.getBoundingClientRect().top;
+      if (rect < trigger) el.classList.add("visible");
+    });
+  };
+
+  revealOnScroll();
+  window.addEventListener("scroll", revealOnScroll);
+}
+
 /* FILTERS */
 const filterBtns = document.querySelectorAll(".filter-btn");
 const items = document.querySelectorAll(".portfolio-item");
 
-filterBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    filterBtns.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
+if (filterBtns.length && items.length) {
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
 
-    const category = btn.dataset.filter;
+      const category = btn.dataset.filter;
 
-    items.forEach(item => {
-      item.style.display = (category === "all" || item.dataset.category === category)
-        ? "block"
-        : "none";
+      items.forEach(item => {
+        item.style.display = (category === "all" || item.dataset.category === category)
+          ? "block"
+          : "none";
+      });
     });
   });
-});
+}
 
 /* LIGHTBOX */
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 
-items.forEach(item => {
-  item.addEventListener("click", () => {
-    const src = item.querySelector("img").src;
-    lightboxImg.src = src;
-    lightbox.style.display = "flex";
+if (lightbox && lightboxImg && items.length) {
+  items.forEach(item => {
+    item.addEventListener("click", () => {
+      const image = item.querySelector("img");
+      if (!image) return;
+      lightboxImg.src = image.src;
+      lightboxImg.alt = image.alt || "Portfolio preview";
+      lightbox.style.display = "flex";
+    });
   });
-});
 
-lightbox.addEventListener("click", () => {
-  lightbox.style.display = "none";
-});
+  lightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+}
