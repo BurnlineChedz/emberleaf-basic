@@ -1,82 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About | EmberLeaf Laserworks</title>
-<meta name="description" content="Learn the story, mission, and capabilities behind EmberLeaf Laserworks custom engraving." />
-<link rel="canonical" href="https://www.emberleaflaserworks.com/about.html" />
-<meta property="og:title" content="About | EmberLeaf Laserworks" />
-<meta property="og:description" content="The story and craftsmanship behind EmberLeaf Laserworks." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.emberleaflaserworks.com/about.html" />
-<meta property="og:image" content="https://www.emberleaflaserworks.com/og-cover.jpg" />
-<link rel="icon" type="image/png" href="favicon.png" />
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | EmberLeaf Laserworks</title>
+  <meta name="description" content="Learn the story, mission, and process behind EmberLeaf Laserworks custom engraving." />
+  <link rel="canonical" href="https://www.emberleaflaserworks.com/about.html" />
+  <meta property="og:title" content="About | EmberLeaf Laserworks" />
+  <meta property="og:description" content="Craft + precision + modern design for engraving that stands out." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.emberleaflaserworks.com/about.html" />
+  <meta property="og:image" content="https://www.emberleaflaserworks.com/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="/" class="logo">
-      <img src="logo.svg" alt="EmberLeaf Laserworks logo">
-    </a>
-    <nav class="desktop-links" aria-label="Primary navigation">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="/" class="brand" aria-label="EmberLeaf Laserworks home">
+        <img src="logo1.svg" alt="EmberLeaf Laserworks logo" />
+      </a>
+      <button id="mobileToggle" class="mobile-toggle" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/about.html" aria-current="page">About</a>
+        <a href="/index.html#quote" class="btn-nav">Get Quote</a>
+      </nav>
+    </div>
+
+    <nav id="mobileMenu" class="mobile-nav" aria-label="Mobile navigation">
       <a href="/">Home</a>
       <a href="/portfolio.html">Portfolio</a>
-      <a href="/about.html">About</a>
+      <a href="/about.html" aria-current="page">About</a>
+      <a href="/index.html#quote">Get Quote</a>
     </nav>
-    <button id="mobileToggle" class="mobile-toggle" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
-  </div>
+  </header>
 
-  <nav id="mobileMenu" class="mobile-links" aria-label="Mobile navigation">
-    <a href="/">Home</a>
-    <a href="/portfolio.html">Portfolio</a>
-    <a href="/about.html">About</a>
-  </nav>
-</header>
+  <main id="main-content">
+    <section class="section hero-lite">
+      <div class="container">
+        <p class="eyebrow animate-up">About EmberLeaf</p>
+        <h1 class="animate-up">Engineering Precision into Every Piece</h1>
+        <p class="lead animate-up">We blend disciplined process with modern design so every engraving feels premium and intentional.</p>
+      </div>
+    </section>
 
-<section class="section parallax-bg" style="padding-top:160px;padding-bottom:160px;">
-  <div class="hero-spotlight"></div>
-  <div class="container">
-    <h1 class="animate-title">
-      Built By<br><span class="gold-text">Craft & Precision</span>
-    </h1>
-    <p class="hero-sub animate-fade">
-      EmberLeaf Laserworks was forged by a passion for engineering, design, and creating meaningful custom pieces.
-    </p>
-  </div>
-</section>
+    <section class="section">
+      <div class="container about-layout">
+        <article class="about-panel animate-up">
+          <h2>Our Story</h2>
+          <p>EmberLeaf Laserworks started with a simple goal: produce engraving work that looks as good in hand as it does online. Our process combines clean design, technical setup, and consistent quality control.</p>
+        </article>
+        <article class="about-panel animate-up">
+          <h2>Our Mission</h2>
+          <p>To help people celebrate milestones, elevate their brand presence, and deliver meaningful gifts through high-quality custom engraving.</p>
+        </article>
+        <article class="about-panel animate-up">
+          <h2>Capabilities</h2>
+          <ul>
+            <li>Custom engraving on wood, metal, acrylic, glass, and tumblers</li>
+            <li>Short-run and batch production for brands and events</li>
+            <li>Vector file cleanup and engraving-ready design prep</li>
+            <li>Fast, clear communication through every project stage</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
 
-<section class="section">
-  <div class="container about-body animate-up">
-    <h2>Our Story</h2>
-    <p>
-      We combine military precision, modern design sensibilities, and high-end craftsmanship to deliver engraving
-      work that stands out. Each project is handled with care, every detail refined, and every piece built to last.
-    </p>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="logo-white.png" class="footer-logo" alt="EmberLeaf Laserworks mark" />
+        <p>Ready to build your next custom project? Let’s make it happen.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+    <p class="copyright">© <span id="year"></span> EmberLeaf Laserworks. Built with precision.</p>
+  </footer>
 
-    <h2>Our Mission</h2>
-    <p>
-      To create premium, personalized engravings that celebrate milestones, elevate brands, and make people feel valued.
-    </p>
-
-    <h2>Capabilities</h2>
-    <ul>
-      <li>Custom engraving on wood, metal, acrylic, glass, and tumblers</li>
-      <li>Short-run production for small brands</li>
-      <li>Precision vector prep and design</li>
-      <li>Machine-grade accuracy with creative finishing</li>
-    </ul>
-  </div>
-</section>
-
-<footer class="footer">© <span id="year"></span> EmberLeaf Laserworks.</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

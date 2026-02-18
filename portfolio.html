@@ -1,6 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio | EmberLeaf Laserworks</title>
+  <meta name="description" content="Explore EmberLeaf Laserworks engraving projects across wood, metal, tumblers, acrylic, and branded products." />
+  <link rel="canonical" href="https://www.emberleaflaserworks.com/portfolio.html" />
+  <meta property="og:title" content="Portfolio | EmberLeaf Laserworks" />
+  <meta property="og:description" content="A curated gallery of custom engraving projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.emberleaflaserworks.com/portfolio.html" />
+  <meta property="og:image" content="https://www.emberleaflaserworks.com/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="/" class="brand" aria-label="EmberLeaf Laserworks home">
+        <img src="logo1.svg" alt="EmberLeaf Laserworks logo" />
+      </a>
+      <button id="mobileToggle" class="mobile-toggle" aria-expanded="false" aria-controls="mobileMenu">Menu</button>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/portfolio.html" aria-current="page">Portfolio</a>
+        <a href="/about.html">About</a>
+        <a href="/index.html#quote" class="btn-nav">Get Quote</a>
+      </nav>
+    </div>
+
+    <nav id="mobileMenu" class="mobile-nav" aria-label="Mobile navigation">
+      <a href="/">Home</a>
+      <a href="/portfolio.html" aria-current="page">Portfolio</a>
+      <a href="/about.html">About</a>
+      <a href="/index.html#quote">Get Quote</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="section hero-lite">
+      <div class="container">
+        <p class="eyebrow animate-up">Selected Work</p>
+        <h1 class="animate-up">Portfolio Built for Attention</h1>
+        <p class="lead animate-up">Filter by category and tap any project to view it larger.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="portfolio-filters animate-up" role="toolbar" aria-label="Portfolio categories">
+          <button class="filter-btn active" data-filter="all" type="button">All</button>
+          <button class="filter-btn" data-filter="brand" type="button">Brand</button>
+          <button class="filter-btn" data-filter="awards" type="button">Awards</button>
+          <button class="filter-btn" data-filter="gifts" type="button">Gifts</button>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-item animate-up" data-category="brand">
+            <img src="og-cover.jpg" alt="Custom branded engraving sample" />
+            <div class="overlay"><h2>Brand Collection</h2><p>Clean logo engravings for merch.</p></div>
+          </article>
+          <article class="portfolio-item animate-up" data-category="awards">
+            <img src="9E8BB965-1735-4577-BFA8-DE129C239860.png" alt="Engraved award sample" />
+            <div class="overlay"><h2>Team Awards</h2><p>Recognition pieces with premium finish.</p></div>
+          </article>
+          <article class="portfolio-item animate-up" data-category="gifts">
+            <img src="EmberLeaf Cali.svg" alt="Gift engraving concept sample" />
+            <div class="overlay"><h2>Gift Sets</h2><p>Personalized gifts with meaningful detail.</p></div>
+          </article>
+          <article class="portfolio-item animate-up" data-category="brand">
+            <img src="logo-white.png" alt="Branded mark sample" />
+            <div class="overlay"><h2>Identity Pieces</h2><p>Consistent engraving for business presence.</p></div>
+          </article>
+          <article class="portfolio-item animate-up" data-category="awards">
+            <img src="logo.svg" alt="Award engraving design sample" />
+            <div class="overlay"><h2>Event Awards</h2><p>Small-run batches delivered on schedule.</p></div>
+          </article>
+          <article class="portfolio-item animate-up" data-category="gifts">
+            <img src="og-cover.jpg" alt="Premium gift engraving sample" />
+            <div class="overlay"><h2>Premium Gifts</h2><p>Memorable pieces for milestone moments.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Expanded portfolio image">
+    <img id="lightbox-img" src="" alt="Expanded portfolio item" />
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="logo-white.png" class="footer-logo" alt="EmberLeaf Laserworks mark" />
+        <p>Need a custom piece? We can quote your project in 1 business day.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="/">Home</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+    <p class="copyright">© <span id="year"></span> EmberLeaf Laserworks. Built with precision.</p>
+  </footer>
+
+  <script src="script.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Portfolio | EmberLeaf Laserworks</title>
