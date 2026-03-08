@@ -1,6 +1,6 @@
-\"use client\";
+"use client";
 
-import { useEffect, useRef } from \"react\";
+import { useEffect, useRef } from "react";
 
 type ParallaxHeroProps = {
   children: React.ReactNode;
@@ -31,13 +31,13 @@ export default function ParallaxHero({ children }: ParallaxHeroProps) {
       if (frame != null) cancelAnimationFrame(frame);
       frame = window.requestAnimationFrame(() => {
         el.style.transform =
-          \"perspective(900px) rotateX(\" +
+          "perspective(900px) rotateX(" +
           rotateX +
-          \"deg) rotateY(\" +
+          "deg) rotateY(" +
           rotateY +
-          \"deg) translateY(\" +
+          "deg) translateY(" +
           translateY +
-          \"px)\";
+          "px)";
       });
     };
 
@@ -45,16 +45,16 @@ export default function ParallaxHero({ children }: ParallaxHeroProps) {
       if (frame != null) cancelAnimationFrame(frame);
       frame = window.requestAnimationFrame(() => {
         el.style.transform =
-          \"perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0)\";
+          "perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0)";
       });
     };
 
-    el.addEventListener(\"pointermove\", handlePointerMove);
-    el.addEventListener(\"pointerleave\", handleLeave);
+    el.addEventListener("pointermove", handlePointerMove);
+    el.addEventListener("pointerleave", handleLeave);
 
     return () => {
-      el.removeEventListener(\"pointermove\", handlePointerMove);
-      el.removeEventListener(\"pointerleave\", handleLeave);
+      el.removeEventListener("pointermove", handlePointerMove);
+      el.removeEventListener("pointerleave", handleLeave);
       if (frame != null) cancelAnimationFrame(frame);
     };
   }, []);
@@ -62,10 +62,9 @@ export default function ParallaxHero({ children }: ParallaxHeroProps) {
   return (
     <div
       ref={ref}
-      className=\"will-change-transform transition-transform duration-150 ease-out\"
+      className="will-change-transform transition-transform duration-150 ease-out"
     >
       {children}
     </div>
   );
 }
-
