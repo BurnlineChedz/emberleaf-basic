@@ -12,7 +12,7 @@ export default function PortfolioPage() {
         Portfolio
       </h1>
       <p className="mt-1 text-[color:var(--silver)]">
-        Projects — edit the list in lib/portfolio.ts
+        A selection of projects — edit the list in lib/portfolio.ts
       </p>
 
       <ul className="mt-8 space-y-4" aria-label="Projects list">
@@ -25,13 +25,22 @@ export default function PortfolioPage() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
               <h2 className="font-semibold text-[color:var(--white)]">
                 {project.title}
               </h2>
               <p className="mt-0.5 text-sm text-[color:var(--silver)]">
                 {project.description}
               </p>
+              {project.tags.length > 0 && (
+                <ul className="mt-2 flex flex-wrap gap-1.5" aria-label="Tags">
+                  {project.tags.map((tag) => (
+                    <li key={tag} className={ui.badge}>
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
             <a
               href={project.link}
@@ -39,7 +48,7 @@ export default function PortfolioPage() {
               rel="noopener noreferrer"
               className={`shrink-0 ${ui.outlineBtn}`}
             >
-              Link
+              View
             </a>
           </motion.li>
         ))}

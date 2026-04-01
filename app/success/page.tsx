@@ -2,17 +2,32 @@
 
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import confetti from "canvas-confetti";
 import { motion } from "framer-motion";
 import { ui } from "@/src/lib/uiClasses";
+import type { Product } from "@/lib/products";
+
+type OrderLine = { product: Product; quantity: number };
 
 export default function SuccessPage() {
-  const { clearCart } = useCart();
+  const { clearCart, getCartLines, totalPrice } = useCart();
+  const [orderLines, setOrderLines] = useState<OrderLine[]>([]);
+  const [orderTotal, setOrderTotal] = useState(0);
+  const cleared = useRef(false);
 
   useEffect(() => {
+    if (cleared.current) return;
+    cleared.current = true;
+
+    // Capture cart contents before clearing so we can display the order summary.
+    const lines = getCartLines();
+    const total = lines.reduce((sum, l) => sum + l.product.price * l.quantity, 0);
+    setOrderLines(lines);
+    setOrderTotal(total);
+
     clearCart();
-    // Neon confetti burst on success (neon green, white, silver only).
+
     confetti({
       particleCount: 90,
       spread: 60,
@@ -20,7 +35,7 @@ export default function SuccessPage() {
       colors: ["#39FF14", "#ffffff", "#bfc5c9"],
       scalar: 0.9,
     });
-  }, [clearCart]);
+  }, [clearCart, getCartLines]);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-16 text-center">
@@ -30,14 +45,57 @@ export default function SuccessPage() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <h1 className="text-2xl font-bold text-[color:var(--white)]">
-          Thank you
+          Order confirmed
         </h1>
         <p className="mt-3 text-[color:var(--silver)]">
-          Your order has been placed. We’ll be in touch soon.
+          Your order has been placed. We&apos;ll be in touch soon.
         </p>
-        <Link href="/" className={`mt-8 inline-block ${ui.outlineBtn}`}>
-          Back to Home
-        </Link>
+
+        {orderLines.length > 0 && (
+          <motion.div
+            className={`mx-auto mt-8 max-w-md text-left ${ui.card}`}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+          >
+            <p className="text-sm font-medium text-[color:var(--silver)]">
+              Order summary
+            </p>
+            <ul className="mt-3 space-y-2">
+              {orderLines.map(({ product, quantity }) => (
+                <li
+                  key={product.id}
+                  className="flex justify-between text-sm text-[color:var(--silver)]"
+                >
+                  <span>
+                    {product.name}{" "}
+                    <span className="text-[color:rgba(191,197,201,0.6)]">
+                      × {quantity}
+                    </span>
+                  </span>
+                  <span className="font-medium text-[color:var(--white)]">
+                    ${(product.price * quantity).toFixed(2)}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 flex justify-between border-t border-[color:rgba(191,197,201,0.3)] pt-3 font-semibold text-[color:var(--white)]">
+              <span>Total</span>
+              <span className="text-[color:var(--neon)]">
+                ${orderTotal.toFixed(2)}
+              </span>
+            </p>
+          </motion.div>
+        )}
+
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <Link href="/product" className={ui.primaryBtn}>
+            Shop again
+          </Link>
+          <Link href="/" className={ui.outlineBtn}>
+            Back to Home
+          </Link>
+        </div>
       </motion.div>
     </div>
   );
