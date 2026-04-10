@@ -9,22 +9,20 @@ import { ui } from "@/src/lib/uiClasses";
 import type { Product } from "@/lib/products";
 
 type OrderLine = { product: Product; quantity: number };
+type OrderData = { lines: OrderLine[]; total: number };
 
 export default function SuccessPage() {
   const { clearCart, getCartLines } = useCart();
-  const [orderLines, setOrderLines] = useState<OrderLine[]>([]);
-  const [orderTotal, setOrderTotal] = useState(0);
+  const [orderData, setOrderData] = useState<OrderData>({ lines: [], total: 0 });
   const cleared = useRef(false);
 
   useEffect(() => {
     if (cleared.current) return;
     cleared.current = true;
 
-    // Capture cart contents before clearing so we can display the order summary.
     const lines = getCartLines();
     const total = lines.reduce((sum, l) => sum + l.product.price * l.quantity, 0);
-    setOrderLines(lines);
-    setOrderTotal(total);
+    setOrderData({ lines, total });
 
     clearCart();
 
@@ -36,6 +34,8 @@ export default function SuccessPage() {
       scalar: 0.9,
     });
   }, [clearCart, getCartLines]);
+
+  const { lines: orderLines, total: orderTotal } = orderData;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-16 text-center">

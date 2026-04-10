@@ -11,6 +11,7 @@ export default function Nav() {
 
   useEffect(() => {
     if (totalItems <= 0) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setBadgeAnimated(true);
     const timeout = window.setTimeout(() => setBadgeAnimated(false), 320);
     return () => window.clearTimeout(timeout);
