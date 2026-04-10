@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-4 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
         <Link href="/">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Emberleaf Laserworks" className="h-12 w-auto" />
+          <img src="/logo.svg" alt="Emberleaf Laserworks" className="h-12 w-auto" />
         </Link>
         <p className="text-sm text-[color:var(--silver)]">
           © {new Date().getFullYear()} Emberleaf Laserworks. All rights reserved.
