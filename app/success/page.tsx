@@ -11,7 +11,7 @@ import type { Product } from "@/lib/products";
 type OrderLine = { product: Product; quantity: number };
 
 export default function SuccessPage() {
-  const { clearCart, getCartLines, totalPrice } = useCart();
+  const { clearCart, getCartLines } = useCart();
   const [orderLines, setOrderLines] = useState<OrderLine[]>([]);
   const [orderTotal, setOrderTotal] = useState(0);
   const cleared = useRef(false);
