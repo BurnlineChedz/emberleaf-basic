@@ -16,7 +16,7 @@ export default function Home() {
         <section className={`${ui.card} text-center mx-auto max-w-2xl`}>
           <div className="flex justify-center mb-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.svg" alt="Emberleaf Laserworks" className="w-48 h-auto" />
+            <img src="/logo.png" alt="Emberleaf Laserworks" className="w-48 h-auto" />
           </div>
           <h1 className="text-3xl font-bold text-[color:var(--white)] sm:text-4xl">
             Custom Laser Engraving

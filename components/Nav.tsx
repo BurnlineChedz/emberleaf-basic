@@ -26,7 +26,7 @@ export default function Nav() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="Emberleaf Laserworks" className="h-10 w-auto" />
+          <img src="/logo.png" alt="Emberleaf Laserworks" className="h-10 w-auto" />
         </Link>
         <div className="flex items-center gap-6">
           <Link href="/" className={`text-sm ${ui.navLink}`}>
