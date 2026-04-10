@@ -30,8 +30,9 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # Provide a placeholder so the build doesn't fail on missing env var.
-          # Real secrets are never stored here — set them in repository secrets
-          # for any workflow that actually needs to call Stripe.
-          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY || 'sk_test_placeholder' }}
-          NEXT_PUBLIC_APP_URL: http://localhost:3000
+          # Provide a build-time placeholder so Next.js can compile without
+          # the real secret. This key is never used to call Stripe — it only
+          # satisfies the env var check during `next build`. Set the real key
+          # in your hosting environment (e.g. Vercel project settings).
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY || 'sk_test_00000000000000000000000000000000000000000000000000' }}
+          NEXT_PUBLIC_APP_URL: https://example.com
