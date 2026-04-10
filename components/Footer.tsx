@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-4 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
         <Link href="/">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="Emberleaf Laserworks"
             width={140}
             height={56}
