@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { ui } from "@/src/lib/uiClasses";
@@ -17,10 +18,17 @@ export default function Nav() {
   }, [totalItems]);
 
   return (
-    <nav className="border-b border-[color:rgba(191,197,201,0.35)] bg-[color:rgba(5,5,5,0.96)] shadow-sm">
+    <nav className="border-b border-[color:rgba(0,0,0,0.1)] bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <Link href="/" className={`text-lg font-semibold ${ui.navLink}`}>
-          My Store
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/logo.svg"
+            alt="Emberleaf Laserworks"
+            width={120}
+            height={48}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
         <div className="flex items-center gap-6">
           <Link href="/" className={`text-sm ${ui.navLink}`}>
@@ -52,4 +60,3 @@ export default function Nav() {
     </nav>
   );
 }
-

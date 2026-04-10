@@ -39,7 +39,7 @@ export default function CartPage() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-[color:rgba(5,5,5,0.9)]">
+            <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-gray-100">
               <Image
                 src={product.image}
                 alt={product.name}
@@ -60,7 +60,7 @@ export default function CartPage() {
             <button
               type="button"
               onClick={() => removeFromCart(product.id)}
-              className="shrink-0 rounded-xl border-2 border-[color:rgba(191,197,201,0.6)] px-3 py-1.5 text-sm font-medium text-[color:var(--white)] transition-all duration-200 hover:border-[color:var(--neon)] hover:bg-[color:rgba(57,255,20,0.08)]"
+              className="shrink-0 rounded-xl border-2 border-[color:rgba(0,0,0,0.2)] px-3 py-1.5 text-sm font-medium text-[color:var(--white)] transition-all duration-200 hover:border-[color:var(--neon)] hover:bg-gray-50"
             >
               Remove
             </button>

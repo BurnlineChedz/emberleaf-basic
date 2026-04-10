@@ -28,7 +28,7 @@ export default function ProductPage() {
             transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.08 }}
           >
             <div className={`flex h-full flex-col overflow-hidden ${ui.card}`}>
-              <div className="relative aspect-[3/2] w-full bg-[color:rgba(5,5,5,0.9)]">
+              <div className="relative aspect-[3/2] w-full bg-gray-100">
                 <Image
                   src={product.image}
                   alt={product.name}

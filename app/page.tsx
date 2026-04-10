@@ -1,9 +1,9 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ui } from "@/src/lib/uiClasses";
-import ParallaxHero from "@/src/components/ParallaxHero";
 
 export default function Home() {
   return (
@@ -14,34 +14,32 @@ export default function Home() {
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <ParallaxHero>
-          <div className={`${ui.gradientBorderWrap} mx-auto`}>
-            <section
-              className={`shine-hover ${ui.card} text-center sm:text-left sm:flex sm:flex-col sm:items-start`}
-            >
-              <h1 className="text-3xl font-bold text-[color:var(--white)] sm:text-4xl">
-                Welcome
-              </h1>
-              <p className="mt-3 text-lg text-[color:var(--silver)]">
-                Explore your customized 40oz tumbler or browse the portfolio.
-              </p>
-              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-start">
-                <Link
-                  href="/product"
-                  className={`w-full sm:w-auto ${ui.primaryBtn}`}
-                >
-                  View Product
-                </Link>
-                <Link
-                  href="/portfolio"
-                  className={`w-full sm:w-auto ${ui.outlineBtn}`}
-                >
-                  View Portfolio
-                </Link>
-              </div>
-            </section>
+        <section className={`${ui.card} text-center mx-auto max-w-2xl`}>
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/logo.svg"
+              alt="Emberleaf Laserworks"
+              width={220}
+              height={220}
+              className="w-48 h-auto object-contain"
+              priority
+            />
           </div>
-        </ParallaxHero>
+          <h1 className="text-3xl font-bold text-[color:var(--white)] sm:text-4xl">
+            Custom Laser Engraving
+          </h1>
+          <p className="mt-3 text-lg text-[color:var(--silver)]">
+            Explore your customized 40oz tumbler or browse the portfolio.
+          </p>
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Link href="/product" className={`w-full sm:w-auto ${ui.primaryBtn}`}>
+              View Product
+            </Link>
+            <Link href="/portfolio" className={`w-full sm:w-auto ${ui.outlineBtn}`}>
+              View Portfolio
+            </Link>
+          </div>
+        </section>
       </motion.div>
     </div>
   );
