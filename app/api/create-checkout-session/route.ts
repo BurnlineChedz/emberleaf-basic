@@ -4,7 +4,14 @@ import { getProductById } from "@/lib/products";
 
 export async function POST(req: NextRequest) {
   try {
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+    const secretKey = process.env.STRIPE_SECRET_KEY;
+    if (!secretKey) {
+      return NextResponse.json(
+        { error: "Stripe is not configured" },
+        { status: 500 }
+      );
+    }
+    const stripe = new Stripe(secretKey);
     const body = await req.json();
     const { items } = body as { items: { productId: string; quantity: number }[] };
 
@@ -15,7 +22,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const origin = process.env.NEXT_PUBLIC_APP_URL ?? req.headers.get("origin") ?? "http://localhost:3000";
+    const origin = process.env.NEXT_PUBLIC_APP_URL ?? req.headers.get("origin");
+    if (!origin) {
+      return NextResponse.json(
+        { error: "Could not determine app origin" },
+        { status: 500 }
+      );
+    }
 
     const line_items: Stripe.Checkout.SessionCreateParams.LineItem[] = items.map(
       (item: { productId: string; quantity: number }) => {

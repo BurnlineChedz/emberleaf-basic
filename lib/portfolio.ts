@@ -25,7 +25,7 @@ export const projects: Project[] = [
     description:
       "Real-time weather app with 7-day forecasts, radar maps, and location-based alerts. Pulls from Open-Meteo.",
     tags: ["React", "API", "Charts"],
-    link: "https://example.com/weather",
+    link: "#",
   },
   {
     id: "3",
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     description:
       "Kanban-style task manager with drag-and-drop boards, due dates, and priority labels. Data persists via localStorage.",
     tags: ["React", "DnD", "TypeScript"],
-    link: "https://example.com/taskflow",
+    link: "#",
   },
   {
     id: "4",
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     description:
       "Static blog platform that renders MDX files with syntax highlighting, reading time, and an RSS feed.",
     tags: ["Next.js", "MDX", "SSG"],
-    link: "https://example.com/blog",
+    link: "#",
   },
   {
     id: "5",
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     description:
       "Browser-based color palette generator with harmony modes, contrast checking, and one-click CSS export.",
     tags: ["Canvas API", "TypeScript", "CSS"],
-    link: "https://example.com/palette",
+    link: "#",
   },
   {
     id: "6",
@@ -57,6 +57,6 @@ export const projects: Project[] = [
     description:
       "Personal finance tracker that categorizes spending, visualizes trends, and exports monthly PDF reports.",
     tags: ["React", "Chart.js", "PDF"],
-    link: "https://example.com/budget",
+    link: "#",
   },
 ];
