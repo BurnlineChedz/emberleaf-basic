@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { ui } from "@/src/lib/uiClasses";
@@ -21,14 +20,8 @@ export default function Nav() {
     <nav className="border-b border-[color:rgba(0,0,0,0.1)] bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/logo.png"
-            alt="Emberleaf Laserworks"
-            width={120}
-            height={48}
-            className="h-10 w-auto object-contain"
-            priority
-          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="Emberleaf Laserworks" className="h-10 w-auto" />
         </Link>
         <div className="flex items-center gap-6">
           <Link href="/" className={`text-sm ${ui.navLink}`}>

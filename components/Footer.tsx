@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -6,13 +5,8 @@ export default function Footer() {
     <footer className="border-t border-[color:rgba(0,0,0,0.1)] bg-white py-10">
       <div className="mx-auto max-w-5xl px-4 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
         <Link href="/">
-          <Image
-            src="/logo.png"
-            alt="Emberleaf Laserworks"
-            width={140}
-            height={56}
-            className="h-12 w-auto object-contain"
-          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="Emberleaf Laserworks" className="h-12 w-auto" />
         </Link>
         <p className="text-sm text-[color:var(--silver)]">
           © {new Date().getFullYear()} Emberleaf Laserworks. All rights reserved.
