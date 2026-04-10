@@ -1,19 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useCart } from "@/context/CartContext";
 import { ui } from "@/src/lib/uiClasses";
 
 export default function Nav() {
   const { totalItems } = useCart();
-  const [badgeAnimated, setBadgeAnimated] = useState(false);
+  const badgeRef = useRef<HTMLSpanElement>(null);
 
+  // Animate the badge by toggling a CSS class directly on the DOM element —
+  // avoids calling setState inside an effect.
   useEffect(() => {
-    if (totalItems <= 0) return;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setBadgeAnimated(true);
-    const timeout = window.setTimeout(() => setBadgeAnimated(false), 320);
+    const el = badgeRef.current;
+    if (!el || totalItems <= 0) return;
+    el.classList.add("cart-badge-animate");
+    const timeout = window.setTimeout(() => {
+      el.classList.remove("cart-badge-animate");
+    }, 320);
     return () => window.clearTimeout(timeout);
   }, [totalItems]);
 
@@ -40,11 +44,7 @@ export default function Nav() {
           >
             Cart
             {totalItems > 0 && (
-              <span
-                className={`${ui.badge} ${
-                  badgeAnimated ? "cart-badge-animate" : ""
-                }`}
-              >
+              <span ref={badgeRef} className={ui.badge}>
                 {totalItems}
               </span>
             )}
