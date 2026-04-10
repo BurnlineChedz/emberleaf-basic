@@ -32,7 +32,7 @@ export default function SuccessPage() {
       particleCount: 90,
       spread: 60,
       origin: { y: 0.3 },
-      colors: ["#39FF14", "#ffffff", "#bfc5c9"],
+      colors: ["#0a0a0a", "#555555", "#aaaaaa"],
       scalar: 0.9,
     });
   }, [clearCart, getCartLines]);
@@ -69,7 +69,7 @@ export default function SuccessPage() {
                 >
                   <span>
                     {product.name}{" "}
-                    <span className="text-[color:rgba(191,197,201,0.6)]">
+                    <span className="text-[color:var(--silver)]">
                       × {quantity}
                     </span>
                   </span>
@@ -79,7 +79,7 @@ export default function SuccessPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 flex justify-between border-t border-[color:rgba(191,197,201,0.3)] pt-3 font-semibold text-[color:var(--white)]">
+            <p className="mt-4 flex justify-between border-t border-[color:rgba(0,0,0,0.1)] pt-3 font-semibold text-[color:var(--white)]">
               <span>Total</span>
               <span className="text-[color:var(--neon)]">
                 ${orderTotal.toFixed(2)}

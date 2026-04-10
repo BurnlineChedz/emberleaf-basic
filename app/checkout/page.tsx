@@ -65,7 +65,7 @@ export default function CheckoutPage() {
             </li>
           ))}
         </ul>
-        <p className="mt-3 flex justify-between border-t border-[color:rgba(191,197,201,0.4)] pt-3 font-semibold text-[color:var(--white)]">
+        <p className="mt-3 flex justify-between border-t border-[color:rgba(0,0,0,0.1)] pt-3 font-semibold text-[color:var(--white)]">
           <span>Total</span>
           <span>${totalPrice.toFixed(2)}</span>
         </p>

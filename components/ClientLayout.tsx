@@ -2,7 +2,6 @@
 
 import { CartProvider } from "@/context/CartContext";
 import Nav from "@/components/Nav";
-import CursorGlow from "@/src/components/CursorGlow";
 import { MotionConfig } from "framer-motion";
 
 export default function ClientLayout({
@@ -11,9 +10,8 @@ export default function ClientLayout({
   return (
     <MotionConfig reducedMotion="user">
       <CartProvider>
-        <CursorGlow />
         <Nav />
-        <main className="min-h-screen bg-transparent">{children}</main>
+        <main className="min-h-screen bg-white">{children}</main>
       </CartProvider>
     </MotionConfig>
   );
