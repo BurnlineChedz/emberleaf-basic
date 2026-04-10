@@ -17,7 +17,7 @@ export default function Home() {
         <section className={`${ui.card} text-center mx-auto max-w-2xl`}>
           <div className="flex justify-center mb-6">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Emberleaf Laserworks"
               width={220}
               height={220}
