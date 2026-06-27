@@ -10,6 +10,7 @@ type CartState = { items: CartItem[] };
 type CartAction =
   | { type: "ADD"; productId: string; quantity?: number }
   | { type: "REMOVE"; productId: string }
+  | { type: "UPDATE_QUANTITY"; productId: string; quantity: number }
   | { type: "CLEAR" };
 
 function cartReducer(state: CartState, action: CartAction): CartState {
@@ -30,6 +31,16 @@ function cartReducer(state: CartState, action: CartAction): CartState {
     }
     case "REMOVE":
       return { items: state.items.filter((i) => i.productId !== action.productId) };
+    case "UPDATE_QUANTITY": {
+      if (action.quantity <= 0) {
+        return { items: state.items.filter((i) => i.productId !== action.productId) };
+      }
+      return {
+        items: state.items.map((i) =>
+          i.productId === action.productId ? { ...i, quantity: action.quantity } : i
+        ),
+      };
+    }
     case "CLEAR":
       return { items: [] };
     default:
@@ -41,6 +52,7 @@ type CartContextValue = {
   items: CartItem[];
   addToCart: (productId: string, quantity?: number) => void;
   removeFromCart: (productId: string) => void;
+  updateQuantity: (productId: string, quantity: number) => void;
   clearCart: () => void;
   totalItems: number;
   totalPrice: number;
@@ -72,6 +84,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       addToCart: (productId: string, quantity?: number) =>
         dispatch({ type: "ADD", productId, quantity }),
       removeFromCart: (productId: string) => dispatch({ type: "REMOVE", productId }),
+      updateQuantity: (productId: string, quantity: number) =>
+        dispatch({ type: "UPDATE_QUANTITY", productId, quantity }),
       clearCart: () => dispatch({ type: "CLEAR" }),
       totalItems,
       totalPrice,

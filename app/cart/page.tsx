@@ -7,7 +7,7 @@ import { useCart } from "@/context/CartContext";
 import { ui } from "@/src/lib/uiClasses";
 
 export default function CartPage() {
-  const { getCartLines, totalItems, totalPrice, removeFromCart } = useCart();
+  const { getCartLines, totalItems, totalPrice, removeFromCart, updateQuantity } = useCart();
   const lines = getCartLines();
 
   if (lines.length === 0) {
@@ -56,6 +56,27 @@ export default function CartPage() {
                 ${product.price.toFixed(2)} × {quantity} = $
                 {(product.price * quantity).toFixed(2)}
               </p>
+            </div>
+            <div className="flex items-center gap-2 shrink-0">
+              <button
+                type="button"
+                onClick={() => updateQuantity(product.id, quantity - 1)}
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-[color:var(--silver)] text-[color:var(--white)] transition-all duration-200 hover:border-[color:var(--neon)] hover:text-[color:var(--neon)]"
+                aria-label={`Decrease quantity of ${product.name}`}
+              >
+                −
+              </button>
+              <span className="w-8 text-center text-sm font-medium text-[color:var(--white)]">
+                {quantity}
+              </span>
+              <button
+                type="button"
+                onClick={() => updateQuantity(product.id, quantity + 1)}
+                className="flex h-8 w-8 items-center justify-center rounded-lg border border-[color:var(--silver)] text-[color:var(--white)] transition-all duration-200 hover:border-[color:var(--neon)] hover:text-[color:var(--neon)]"
+                aria-label={`Increase quantity of ${product.name}`}
+              >
+                +
+              </button>
             </div>
             <button
               type="button"
